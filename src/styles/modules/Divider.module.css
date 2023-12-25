@@ -1,0 +1,3 @@
+.root {
+  @apply border-t-slate-300 dark:border-t-slate-700;
+}

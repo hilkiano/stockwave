@@ -1,0 +1,9 @@
+{
+    "Button": {
+        "collapse": "Collapse"
+    },
+    "Menu": {
+        "home": "Home",
+        "account": "Account"
+    }
+}

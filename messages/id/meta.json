@@ -1,0 +1,12 @@
+{
+    "Meta": {
+        "Login": {
+            "title": "{app_name} | Masuk",
+            "desc": ""
+        },
+        "Dashboard": {
+            "title": "{app_name} | Dasbor",
+            "desc": ""
+        }
+    }
+}

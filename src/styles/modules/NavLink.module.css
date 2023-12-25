@@ -1,0 +1,7 @@
+.root {
+  @apply transition-colors duration-300 rounded-full;
+}
+
+.label {
+  @apply text-base;
+}
