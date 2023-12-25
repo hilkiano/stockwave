@@ -1,0 +1,18 @@
+{
+    "Page": {
+        "Login": {
+            "title": "Halaman Masuk",
+            "body_1": "Masukkan username dan password atau gunakan akun sosial Anda untuk masuk.",
+            "body_2": "Jika Anda seorang pemilik bisnis dan belum memiliki akun.",
+            "btn_register": "Daftarkan Disini",
+            "username": "Username",
+            "password": "Password",
+            "val_min_username": "Username harus diisi.",
+            "val_min_password": "Password harus diisi.",
+            "btn_login": "Masuk",
+            "desc_username": "Username, email atau nomor telepon Anda yang ter-registrasi",
+            "or": "ATAU LANJUTKAN DENGAN",
+            "btn_google": "Google"
+        }
+    }
+}

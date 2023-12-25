@@ -16,6 +16,10 @@ const config: Config = {
       transitionProperty: {
         width: "width",
       },
+      colors: {
+        stockwave: "#9D519F",
+        "stockwave-dark": "#B87BBA",
+      },
     },
   },
   plugins: [],

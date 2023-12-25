@@ -1,0 +1,11 @@
+.input {
+  @apply font-sans dark:bg-slate-900;
+}
+
+.dropdown {
+  @apply dark:bg-slate-900 dark:border-slate-700;
+}
+
+.option {
+  @apply dark:hover:bg-slate-800;
+}

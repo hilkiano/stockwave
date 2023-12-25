@@ -1,0 +1,18 @@
+{
+    "Page": {
+        "Login": {
+            "title": "Login Page",
+            "body_1": "Input your username and password or use your social account to login.",
+            "body_2": "If you are a business owner and do not have an account.",
+            "btn_register": "Register Here",
+            "username": "Username",
+            "password": "Password",
+            "val_min_username": "Username must be filled.",
+            "val_min_password": "Password must be filled.",
+            "btn_login": "Login",
+            "desc_username": "Your registered username, email, or phone number",
+            "or": "OR CONTINUE WITH",
+            "btn_google": "Google"
+        }
+    }
+}

@@ -39,7 +39,7 @@ function Sidebar({ withToggle = true }: SidebarProps) {
               <Avatar
                 className={collapse ? "-ml-[.2rem]" : ""}
                 variant="gradient"
-                gradient={{ from: "cyan", to: "teal", deg: 145 }}
+                gradient={{ from: "stockwave", to: "tomato", deg: 45 }}
                 radius="xl"
                 size="sm"
               >

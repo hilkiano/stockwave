@@ -5,5 +5,9 @@
     "Menu": {
         "home": "Beranda",
         "account": "Akun"
+    },
+    "Language": {
+        "en": "EN",
+        "id": "ID"
     }
 }

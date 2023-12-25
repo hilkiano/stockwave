@@ -1,3 +1,4 @@
+import React from "react";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
@@ -14,5 +15,5 @@ export async function generateMetadata({
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <main>{children}</main>;
+  return <React.Fragment>{children}</React.Fragment>;
 }
