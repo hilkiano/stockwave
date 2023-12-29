@@ -7,7 +7,9 @@ import {
   NavLink,
   PasswordInput,
   Select,
+  Stepper,
   TextInput,
+  Textarea,
   createTheme,
 } from "@mantine/core";
 import { generateColors } from "@mantine/colors-generator";
@@ -18,6 +20,7 @@ import selectClasses from "@/styles/modules/Select.module.css";
 import cardClasses from "@/styles/modules/Card.module.css";
 import textInputClasses from "@/styles/modules/TextInput.module.css";
 import passwordInputClasses from "@/styles/modules/PasswordInput.module.css";
+import stepperClasses from "@/styles/modules/Stepper.module.css";
 
 export const theme = createTheme({
   primaryColor: "stockwave",
@@ -72,13 +75,27 @@ export const theme = createTheme({
         radius: "md",
       },
     }),
+    Textarea: Textarea.extend({
+      classNames: {
+        input: textInputClasses.input,
+        error: textInputClasses.error,
+      },
+      defaultProps: {
+        radius: "md",
+      },
+    }),
     PasswordInput: PasswordInput.extend({
       classNames: {
-        input: passwordInputClasses.input,
+        innerInput: passwordInputClasses.input,
         error: passwordInputClasses.error,
       },
       defaultProps: {
         radius: "md",
+      },
+    }),
+    Stepper: Stepper.extend({
+      classNames: {
+        stepIcon: stepperClasses.stepIcon,
       },
     }),
   },

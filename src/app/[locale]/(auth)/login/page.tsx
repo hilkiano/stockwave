@@ -13,11 +13,13 @@ export default function Page() {
   const messages = useMessages();
 
   return (
-    <Center className="h-[calc(100vh-5em)]">
+    <Center className="mt-4 mb-12">
       <Card withBorder radius="lg" className="w-full max-w-[750px]">
         <div className="flex flex-col md:flex-row gap-5 md:gap-2 p-0 md:p-3">
           <div className="flex flex-col px-3">
-            <h1 className="m-0 font-normal">{t("title")}</h1>
+            <h1 className="m-0 font-normal text-3xl md:text-4xl">
+              {t("title")}
+            </h1>
             <p className="m-0 opacity-75">{t("body_1")}</p>
             <NextIntlClientProvider messages={pick(messages, ["Page.Login"])}>
               <LoginForm />

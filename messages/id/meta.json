@@ -1,11 +1,15 @@
 {
     "Meta": {
         "Login": {
-            "title": "{app_name} | Masuk",
+            "title": "{app_name} | Login",
             "desc": ""
         },
         "Dashboard": {
             "title": "{app_name} | Dasbor",
+            "desc": ""
+        },
+        "Register": {
+            "title": "{app_name} | Registrasi",
             "desc": ""
         }
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import { ActionIcon, Drawer } from "@mantine/core";
+import { ActionIcon, Drawer, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import React from "react";
 import Sidebar from "./Sidebar";
@@ -29,8 +29,12 @@ function AppBar({ withSidebar = true }: AppBarProps) {
   return (
     <React.Fragment>
       <div
-        style={{ backdropFilter: "blur(20px)" }}
-        className={`drop-shadow rounded-lg px-2 py-2 h-14 bg-slate-200/70 dark:bg-slate-800/70 sticky top-0 w-screen transition-width max-w-full flex justify-between items-center z-10`}
+        style={withSidebar ? { backdropFilter: "blur(20px)" } : {}}
+        className={`drop-shadow rounded-lg px-2 py-2 h-14 ${
+          withSidebar
+            ? "bg-slate-200/70 dark:bg-slate-800/70 sticky z-10"
+            : "bg-transparent mb-4"
+        } top-0 w-screen transition-width max-w-full flex justify-between items-center `}
       >
         <div className="ml-2">
           <ActionIcon

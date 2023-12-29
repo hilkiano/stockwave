@@ -7,6 +7,7 @@ import { theme } from "@/styles/theme";
 import { workSans } from "@/styles/fonts";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import QueryProvider from "@/lib/queryProvider";
 
 const locales = ["en", "id"];
 
@@ -47,7 +48,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${workSans.variable} font-sans antialiased`}>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <QueryProvider>
+          <MantineProvider theme={theme}>{children}</MantineProvider>
+        </QueryProvider>
       </body>
     </html>
   );

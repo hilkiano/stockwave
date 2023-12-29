@@ -7,6 +7,10 @@
         "Dashboard": {
             "title": "{app_name} | Dashboard",
             "desc": ""
+        },
+        "Register": {
+            "title": "{app_name} | Registration",
+            "desc": ""
         }
     }
 }

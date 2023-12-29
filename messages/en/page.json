@@ -13,6 +13,48 @@
             "desc_username": "Your registered username, email, or phone number",
             "or": "OR CONTINUE WITH",
             "btn_google": "Google"
+        },
+        "Register": {
+            "Stepper": {
+                "title_step_1": "Registration Form",
+                "subtitle_step_1": "Business details and personal information",
+                "title_step_2": "Usage Plan",
+                "subtitle_step_2": "Choose plan based on your needs",
+                "title_step_3": "Review",
+                "subtitle_step_3": "Make sure everything is right"
+            },
+            "Step_1": {
+                "title": "Fill your details",
+                "body_1": "Please fill the form below. We want to make the registration as simple as possible.",
+                "b_subtitle": "About your business",
+                "business_name": "Business name",
+                "val_min_business_name": "Business name must be filled.",
+                "business_email": "Business email",
+                "val_min_business_email": "Business email must be filled.",
+                "business_phone": "Business phone",
+                "val_min_business_phone": "Business phone must be filled.",
+                "business_address": "Business address",
+                "p_subtitle": "About you",
+                "personal_name": "Your name",
+                "val_min_personal_name": "Your name must be filled.",
+                "personal_email": "Your email",
+                "personal_email_desc": "We will send you a verification email later to this email.",
+                "val_min_personal_email": "Your email must be filled.",
+                "personal_phone": "Your phone",
+                "val_min_personal_phone": "Your phone must be filled.",
+                "personal_address": "Your address",
+                "val_format_email": "Email is not in a correct format.",
+                "val_format_phone": "Phone number is not in a correct format.",
+                "body_2": "All informations can be updated later.",
+                "btn_back": "Back to Login Page",
+                "btn_next": "Continue"
+            },
+            "Step_2": {
+                "title": "Choose your plan",
+                "body_1": "Choose plan that suits your business needs. You may change the plan at a later date.",
+                "btn_back": "Go Back",
+                "btn_next": "Continue"
+            }
         }
     }
 }

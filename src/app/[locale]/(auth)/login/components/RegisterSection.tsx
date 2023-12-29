@@ -2,7 +2,6 @@
 
 import { Button } from "@mantine/core";
 import { Link } from "@/lib/navigation";
-import React from "react";
 import { useTranslations } from "next-intl";
 
 function RegisterSection() {
@@ -16,6 +15,7 @@ function RegisterSection() {
         gradient={{ from: "stockwave", to: "tomato", deg: 145 }}
         component={Link}
         href="/register"
+        scroll={false}
         size="lg"
       >
         {t("btn_register")}

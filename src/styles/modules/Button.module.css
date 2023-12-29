@@ -1,3 +1,3 @@
 .root {
-  @apply uppercase transition-colors dark:data-[variant=default]:bg-slate-900;
+  @apply uppercase transition-colors dark:data-[variant=default]:bg-slate-900 dark:data-[variant=default]:hover:bg-slate-950 dark:data-[variant=filled]:disabled:bg-slate-700;
 }
