@@ -40,7 +40,6 @@ function RegisterForm() {
 
   type RegDataType = {
     form_data?: z.infer<typeof schema>;
-    choosed_plan?: number;
   };
 
   const [regData, setRegData] = useLocalStorage<RegDataType | null>({
@@ -50,10 +49,12 @@ function RegisterForm() {
 
   const {
     handleSubmit,
-    formState: { errors },
+    trigger,
+    formState: { errors, isValid },
     control,
     setValue,
   } = useForm<z.infer<typeof schema>>({
+    mode: "onChange",
     resolver: zodResolver(schema),
     defaultValues: {
       business_name: "",
@@ -84,8 +85,9 @@ function RegisterForm() {
       setValue("personal_email", regData.form_data!.personal_email);
       setValue("personal_phone", regData.form_data!.personal_phone);
       setValue("personal_address", regData.form_data!.personal_address);
+      trigger();
     }
-  }, [regData, setValue]);
+  }, [regData, setValue, trigger]);
 
   return (
     <div className="flex justify-center mt-4 mb-12">
@@ -246,6 +248,7 @@ function RegisterForm() {
                     size="xs"
                     rightSection={<i className="ti ti-arrow-big-right"></i>}
                     variant="filled"
+                    disabled={!isValid}
                   >
                     {t("btn_next")}
                   </Button>

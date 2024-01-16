@@ -24,7 +24,9 @@ const PageContent = ({ queryClient }: { queryClient: QueryClient }) => {
 
   return (
     <React.Fragment>
-      <NextIntlClientProvider messages={pick(messages, ["Page.Register"])}>
+      <NextIntlClientProvider
+        messages={pick(messages, ["Page.Register", "ErrorHandler"])}
+      >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <RegisterStep />
         </HydrationBoundary>

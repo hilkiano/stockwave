@@ -1,13 +1,16 @@
 {
-    "Button": {
-        "collapse": "Collapse"
-    },
-    "Menu": {
-        "home": "Home",
-        "account": "Account"
-    },
-    "Language": {
-        "en": "EN",
-        "id": "ID"
-    }
+  "Button": {
+    "collapse": "Collapse"
+  },
+  "Menu": {
+    "home": "Home",
+    "account": "Account"
+  },
+  "Language": {
+    "en": "EN",
+    "id": "ID"
+  },
+  "ErrorHandler": {
+    "modal_title": "Sorry. There was an error on our side."
+  }
 }

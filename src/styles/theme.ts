@@ -3,13 +3,17 @@
 import {
   Button,
   Card,
+  Checkbox,
+  Code,
   Divider,
+  Modal,
   NavLink,
   PasswordInput,
   Select,
   Stepper,
   TextInput,
   Textarea,
+  Notification,
   createTheme,
 } from "@mantine/core";
 import { generateColors } from "@mantine/colors-generator";
@@ -21,6 +25,10 @@ import cardClasses from "@/styles/modules/Card.module.css";
 import textInputClasses from "@/styles/modules/TextInput.module.css";
 import passwordInputClasses from "@/styles/modules/PasswordInput.module.css";
 import stepperClasses from "@/styles/modules/Stepper.module.css";
+import modalClasses from "@/styles/modules/Modal.module.css";
+import codeClasses from "@/styles/modules/Code.module.css";
+import checkboxClasses from "@/styles/modules/Checkbox.module.css";
+import notificationClasses from "@/styles/modules/Notification.module.css";
 
 export const theme = createTheme({
   primaryColor: "stockwave",
@@ -96,6 +104,39 @@ export const theme = createTheme({
     Stepper: Stepper.extend({
       classNames: {
         stepIcon: stepperClasses.stepIcon,
+      },
+    }),
+    Modal: Modal.extend({
+      classNames: {
+        content: modalClasses.content,
+        header: modalClasses.header,
+      },
+      defaultProps: {
+        radius: "md",
+      },
+    }),
+    Code: Code.extend({
+      classNames: {
+        root: codeClasses.root,
+      },
+    }),
+    Checkbox: Checkbox.extend({
+      classNames: {
+        input: checkboxClasses.input,
+      },
+    }),
+    Notification: Notification.extend({
+      classNames: {
+        root: notificationClasses.root,
+      },
+      styles: {
+        root: {
+          backdropFilter: "blur(5px)",
+        },
+      },
+      defaultProps: {
+        withBorder: true,
+        radius: "md",
       },
     }),
   },

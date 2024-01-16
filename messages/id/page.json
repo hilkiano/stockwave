@@ -1,60 +1,89 @@
 {
-    "Page": {
-        "Login": {
-            "title": "Halaman Login",
-            "body_1": "Masukkan username dan password atau gunakan akun sosial Anda untuk masuk.",
-            "body_2": "Jika Anda seorang pemilik bisnis dan belum memiliki akun.",
-            "btn_register": "Daftarkan Disini",
-            "username": "Username",
-            "password": "Password",
-            "val_min_username": "Username harus diisi.",
-            "val_min_password": "Password harus diisi.",
-            "btn_login": "Masuk",
-            "desc_username": "Username, email atau nomor telepon Anda yang ter-registrasi",
-            "or": "ATAU LANJUTKAN DENGAN",
-            "btn_google": "Google"
-        },
-        "Register": {
-            "Stepper": {
-                "title_step_1": "Formulir Registrasi",
-                "subtitle_step_1": "Detail bisnis dan informasi pribadi",
-                "title_step_2": "Paket Penggunaan",
-                "subtitle_step_2": "Pilih paket berdasarkan kebutuhan Anda",
-                "title_step_3": "Tinjauan",
-                "subtitle_step_3": "Pastikan semua sudah benar"
-            },
-            "Step_1": {
-                "title": "Isi detail Anda",
-                "body_1": "Silakan isi formulir di bawah ini. Kami ingin membuat pendaftaran sesederhana mungkin.",
-                "b_subtitle": "Mengenai bisnis Anda",
-                "business_name": "Nama bisnis",
-                "val_min_business_name": "Nama bisnis harus diisi.",
-                "business_email": "Email bisnis",
-                "val_min_business_email": "Email bisnis harus diisi.",
-                "business_phone": "Telepon bisnis",
-                "val_min_business_phone": "Telepon bisnis harus diisi.",
-                "business_address": "Alamat bisnis",
-                "p_subtitle": "Mengenai Anda",
-                "personal_name": "Nama Anda",
-                "val_min_personal_name": "Nama Anda harus diisi.",
-                "personal_email": "Email Anda",
-                "personal_email_desc": "Kami akan mengirimkan email verifikasi kepada Anda melalui email ini.",
-                "val_min_personal_email": "Email Anda harus diisi.",
-                "personal_phone": "Telepon Anda",
-                "val_min_personal_phone": "Telepon Anda harus diisi.",
-                "personal_address": "Alamat Anda",
-                "val_format_email": "Email tidak dalam format yang benar.",
-                "val_format_phone": "Nomor telepon tidak dalam format yang benar.",
-                "body_2": "Semua informasi dapat diperbarui lagi nanti.",
-                "btn_back": "Kembali ke Halaman Login",
-                "btn_next": "Lanjutkan"
-            },
-            "Step_2": {
-                "title": "Pilih paket Anda",
-                "body_1": "Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Anda dapat mengubah paket di lain hari.",
-                "btn_back": "Kembali",
-                "btn_next": "Lanjutkan"
-            }
-        }
+  "Page": {
+    "Login": {
+      "title": "Halaman Login",
+      "body_1": "Masukkan username dan password atau gunakan akun sosial Anda untuk masuk.",
+      "body_2": "Jika Anda seorang pemilik bisnis dan belum memiliki akun.",
+      "btn_register": "Daftarkan Disini",
+      "username": "Username",
+      "password": "Password",
+      "val_min_username": "Username harus diisi.",
+      "val_min_password": "Password harus diisi.",
+      "btn_login": "Masuk",
+      "desc_username": "Username, email atau nomor telepon Anda yang ter-registrasi",
+      "or": "ATAU LANJUTKAN DENGAN",
+      "btn_google": "Google"
+    },
+    "Register": {
+      "Stepper": {
+        "title_step_1": "Formulir Registrasi",
+        "subtitle_step_1": "Detail bisnis dan informasi pribadi",
+        "title_step_2": "Paket Penggunaan",
+        "subtitle_step_2": "Pilih paket berdasarkan kebutuhan Anda",
+        "title_step_3": "Tinjauan",
+        "subtitle_step_3": "Pastikan semua sudah benar"
+      },
+      "Step_1": {
+        "title": "Isi detail Anda",
+        "body_1": "Silakan isi formulir di bawah ini. Kami ingin membuat pendaftaran sesederhana mungkin.",
+        "b_subtitle": "Mengenai bisnis Anda",
+        "business_name": "Nama bisnis",
+        "val_min_business_name": "Nama bisnis harus diisi.",
+        "business_email": "Email bisnis",
+        "val_min_business_email": "Email bisnis harus diisi.",
+        "business_phone": "Telepon bisnis",
+        "val_min_business_phone": "Telepon bisnis harus diisi.",
+        "business_address": "Alamat bisnis",
+        "p_subtitle": "Mengenai Anda",
+        "personal_name": "Nama Anda",
+        "val_min_personal_name": "Nama Anda harus diisi.",
+        "personal_email": "Email Anda",
+        "personal_email_desc": "Kami akan mengirimkan email verifikasi kepada Anda melalui email ini.",
+        "val_min_personal_email": "Email Anda harus diisi.",
+        "personal_phone": "Telepon Anda",
+        "val_min_personal_phone": "Telepon Anda harus diisi.",
+        "personal_address": "Alamat Anda",
+        "val_format_email": "Email tidak dalam format yang benar.",
+        "val_format_phone": "Nomor telepon tidak dalam format yang benar.",
+        "body_2": "Semua informasi dapat diperbarui lagi nanti.",
+        "btn_back": "Kembali ke Halaman Login",
+        "btn_next": "Lanjutkan"
+      },
+      "Step_2": {
+        "title": "Pilih paket Anda",
+        "body_1": "Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Anda dapat mengubah paket di lain hari.",
+        "btn_back": "Kembali",
+        "btn_next": "Lanjutkan",
+        "plan_free": "Starter",
+        "plan_silver": "Silver",
+        "plan_gold": "Gold",
+        "plan_platinum": "Platinum",
+        "plan_free_desc": "Bagi mereka yang ingin mencoba mengembangkan bisnis mereka dari nol.",
+        "plan_silver_desc": "Peningkatan yang bagus untuk kehidupan bisnis Anda.",
+        "plan_gold_desc": "Pilihan tepat bagi pemula hingga yang sudah ahli.",
+        "plan_platinum_desc": "Pilihan seorang master.",
+        "per_month": "/bulan",
+        "user_tier": "{value, select, 1 {Dukungan komunitas} 2 {Dukungan developer} 3 {Dukungan developer dengan prioritas tertinggi} other {Tidak didukung}}.",
+        "branch_limit": "Hingga {value, plural, =0 {# cabang} =1 {# cabang} other {# cabang}}.",
+        "product_limit": "Hingga {value, plural, =0 {# produk} =1 {# produk} other {# produk}}.",
+        "daily_transaction": "Hingga {value, plural, =0 {# transaksi harian} =1 {# transaksi harian} other {# transaksi harian}}.",
+        "best_choice": "Pilihan Terbaik",
+        "api_error": "Server Error: <red></red>"
+      },
+      "Step_3": {
+        "title": "Tinjau sebelum registrasi",
+        "body_1": "Lihatlah sekali lagi sebelum membuat akun Anda dan mulai menggunakan aplikasi.",
+        "btn_back": "Kembali",
+        "btn_next": "Kirim",
+        "business": "Bisnis",
+        "name": "Nama",
+        "email": "Email",
+        "phone_number": "Nomor telepon",
+        "address": "Alamat",
+        "owner": "Pemilik Bisnis",
+        "plan": "Paket yang Dipilih",
+        "tnc_checkbox": "Dengan membuat akun, saya setuju dengan syarat dan ketentuan."
+      }
     }
+  }
 }

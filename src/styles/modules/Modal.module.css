@@ -1,0 +1,7 @@
+.content {
+  @apply bg-white dark:bg-slate-900;
+}
+
+.header {
+  @apply bg-white dark:bg-slate-900;
+}

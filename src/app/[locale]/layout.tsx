@@ -1,13 +1,16 @@
 import "@/styles/globals.css";
 import "@mantine/core/styles.layer.css";
+import "@mantine/notifications/styles.css";
 import "@/styles/layout.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { theme } from "@/styles/theme";
+import { ModalsProvider } from "@mantine/modals";
 
 import { workSans } from "@/styles/fonts";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import QueryProvider from "@/lib/queryProvider";
+import { Notifications } from "@mantine/notifications";
 
 const locales = ["en", "id"];
 
@@ -49,7 +52,10 @@ export default function RootLayout({
       </head>
       <body className={`${workSans.variable} font-sans antialiased`}>
         <QueryProvider>
-          <MantineProvider theme={theme}>{children}</MantineProvider>
+          <MantineProvider theme={theme}>
+            <Notifications />
+            <ModalsProvider>{children}</ModalsProvider>
+          </MantineProvider>
         </QueryProvider>
       </body>
     </html>

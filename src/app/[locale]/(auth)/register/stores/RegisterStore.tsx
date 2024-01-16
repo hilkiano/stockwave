@@ -1,9 +1,11 @@
 import { create } from "zustand";
 
-type RegisterStore = {
-  step: number;
-};
-
-export const useRegisterStore = create<RegisterStore>((set) => ({
+export const useRegisterStore = create<{ step: number }>((set) => ({
   step: 0,
+}));
+
+export const useSelectedPlanStore = create<{
+  selectedPlan: PlansModelType | null;
+}>((set) => ({
+  selectedPlan: null,
 }));
