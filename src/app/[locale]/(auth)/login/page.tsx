@@ -21,7 +21,9 @@ export default function Page() {
               {t("title")}
             </h1>
             <p className="m-0 opacity-75">{t("body_1")}</p>
-            <NextIntlClientProvider messages={pick(messages, ["Page.Login"])}>
+            <NextIntlClientProvider
+              messages={pick(messages, ["Page.Login", "ErrorHandler"])}
+            >
               <LoginForm />
             </NextIntlClientProvider>
           </div>

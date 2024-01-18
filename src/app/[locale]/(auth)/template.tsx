@@ -10,7 +10,12 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <div className="flex h-screen bg-slate-50 dark:bg-slate-900">
       <main className="grow overflow-auto relative p-3">
         <NextIntlClientProvider
-          messages={pick(messages, ["Button", "Menu", "Language"])}
+          messages={pick(messages, [
+            "Button",
+            "Menu",
+            "Language",
+            "ErrorHandler",
+          ])}
         >
           <AppBar withSidebar={false} />
         </NextIntlClientProvider>

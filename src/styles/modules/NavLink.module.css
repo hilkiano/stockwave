@@ -1,5 +1,9 @@
 .root {
-  @apply transition-colors duration-300 rounded-full;
+  @apply transition-colors duration-300 rounded-lg;
+}
+
+.root:hover {
+  @apply bg-stockwave/30 dark:bg-stockwave-dark/30;
 }
 
 .label {

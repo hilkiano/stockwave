@@ -33,7 +33,18 @@ export const showError = (title: string, error: Error) => {
       icon: <i className="ti ti-exclamation-circle"></i>,
       color: "red",
       title: title,
-      message: `${errorObj.code}: ${errorObj.message}`,
+      message: formatMessage(errorObj),
     });
+  }
+};
+
+const formatMessage = (error: JsonFailedResponseType) => {
+  if (typeof error.message === "object") {
+    const message = error.message as any;
+    for (let field in message) {
+      return `${field}: ${message[field]}`;
+    }
+  } else {
+    return `${error.code}: ${error.message}`;
   }
 };

@@ -7,14 +7,21 @@ import Sidebar from "./Sidebar";
 import ThemeToggle from "./ThemeToggle";
 import LocaleToggle from "./LocaleToggle";
 import { useLocale, useTranslations } from "next-intl";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { logoutUser } from "@/services/authService";
+import { showError } from "@/services/errorHandler";
+import { useRouter } from "@/lib/navigation";
 
 type AppBarProps = {
   withSidebar?: boolean;
+  withAuth?: boolean;
 };
 
-function AppBar({ withSidebar = true }: AppBarProps) {
+function AppBar({ withSidebar = true, withAuth = false }: AppBarProps) {
   const [opened, { open, close }] = useDisclosure(false);
+  const router = useRouter();
   const locale = useLocale();
+  const tError = useTranslations("ErrorHandler");
   const t = useTranslations("Language");
   const languageOptions = [
     {
@@ -26,6 +33,16 @@ function AppBar({ withSidebar = true }: AppBarProps) {
       value: "en",
     },
   ];
+  const mutation = useMutation({
+    mutationFn: logoutUser,
+    onError: (error) => {
+      showError(tError("modal_title"), error);
+    },
+    onSuccess: (data) => {
+      router.refresh();
+    },
+  });
+
   return (
     <React.Fragment>
       <div
@@ -36,7 +53,7 @@ function AppBar({ withSidebar = true }: AppBarProps) {
             : "bg-transparent mb-4"
         } top-0 w-screen transition-width max-w-full flex justify-between items-center `}
       >
-        <div className="ml-2">
+        <div className="ml-2 flex gap-2">
           <ActionIcon
             variant="transparent"
             aria-label="Open sidebar"
@@ -44,6 +61,14 @@ function AppBar({ withSidebar = true }: AppBarProps) {
             onClick={() => open()}
           >
             <i className={`ti ti-menu-2 text-lg`} />
+          </ActionIcon>
+          <ActionIcon
+            variant="transparent"
+            aria-label="logout"
+            className={`${withAuth ? "block" : "hidden"}`}
+            onClick={() => mutation.mutate()}
+          >
+            <i className={`ti ti-logout text-lg`} />
           </ActionIcon>
         </div>
         <div className="flex gap-2 items-center">

@@ -57,7 +57,7 @@ function PlanSelector() {
     if (isError) {
       showError(tError("modal_title"), plansError);
     }
-  }, [isError]);
+  }, [isError, plansError, tError]);
 
   return (
     <div className="flex justify-center mt-4 mb-12">

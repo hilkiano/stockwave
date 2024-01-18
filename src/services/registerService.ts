@@ -13,7 +13,7 @@ type RegDataType = {
 };
 
 export async function registerUser(payload: RegDataType) {
-  const response = await fetch("/api/register", {
+  const response = await fetch("/api/auth/register", {
     method: "post",
     headers: {
       Accept: "application/json",

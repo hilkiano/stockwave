@@ -15,9 +15,14 @@ export default function Template({ children }: { children: React.ReactNode }) {
       </div>
       <main className="grow overflow-auto relative pt-3 pb-14 pl-3 pr-3 md:pl-0">
         <NextIntlClientProvider
-          messages={pick(messages, ["Button", "Menu", "Language"])}
+          messages={pick(messages, [
+            "Button",
+            "Menu",
+            "Language",
+            "ErrorHandler",
+          ])}
         >
-          <AppBar />
+          <AppBar withAuth />
         </NextIntlClientProvider>
         {children}
       </main>

@@ -6,13 +6,35 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button, PasswordInput, TextInput, Divider } from "@mantine/core";
 import { GoogleIcon } from "@/components/SvgIcons";
+import { useMutation } from "@tanstack/react-query";
+import { showError } from "@/services/errorHandler";
+import { loginUser } from "@/services/authService";
+import { useRouter } from "@/lib/navigation";
 
 function LoginForm() {
+  const router = useRouter();
+  const tError = useTranslations("ErrorHandler");
   const t = useTranslations("Page.Login");
 
   const schema = z.object({
     username: z.string().min(1, { message: t("val_min_username") }),
     password: z.string().min(1, { message: t("val_min_password") }),
+  });
+
+  const mutation = useMutation({
+    mutationFn: (data: z.infer<typeof schema>) => {
+      const payload = {
+        login: data.username,
+        password: data.password,
+      };
+      return loginUser(payload);
+    },
+    onError: (error) => {
+      showError(tError("modal_title"), error);
+    },
+    onSuccess: (data) => {
+      router.push("/");
+    },
   });
 
   const {
@@ -29,7 +51,11 @@ function LoginForm() {
 
   return (
     <div className="mt-4">
-      <form onSubmit={handleSubmit((data) => console.log(data))}>
+      <form
+        onSubmit={handleSubmit((data) => {
+          mutation.mutate(data);
+        })}
+      >
         <div className="flex flex-col gap-2">
           <Controller
             control={control}
@@ -70,6 +96,7 @@ function LoginForm() {
           variant="filled"
           className="mt-4 w-full md:w-auto"
           type="submit"
+          loading={mutation.isPending}
         >
           {t("btn_login")}
         </Button>
