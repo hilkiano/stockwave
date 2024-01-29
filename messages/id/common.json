@@ -1,16 +1,40 @@
 {
   "Button": {
-    "collapse": "Kecilkan"
+    "collapse": "Kecilkan",
+    "logout_confirm": "Ya, Saya Yakin",
+    "logout_cancel": "Tidak, Tunggu dulu"
   },
   "Menu": {
     "home": "Beranda",
-    "account": "Akun"
+    "account": "Akun",
+    "branches_divider": "Cabang Usaha",
+    "transactions": "Transaksi",
+    "products": "Produk",
+    "reports": "Laporan"
   },
   "Language": {
     "en": "EN",
-    "id": "ID"
+    "id": "ID",
+    "dropdown_group": "Pilih bahasa",
+    "en_dropdown": "Bahasa Inggris",
+    "id_dropdown": "Bahasa Indonesia"
+  },
+  "Theme": {
+    "light": "Tema terang",
+    "dark": "Tema gelap"
   },
   "ErrorHandler": {
     "modal_title": "Maaf. Terjadi kesalahan di pihak kami."
+  },
+  "Logout": {
+    "logout_btn": "Logout",
+    "logout_header": "Konfirmasi Logout",
+    "logout_modal_body": "Apakah Anda yakin ingin mengakhiri sesi? Beberapa data kemungkinan belum tersimpan."
+  },
+  "Filter": {
+    "header": "Saringan tambahan"
+  },
+  "Statistic": {
+    "total": "Total {model}"
   }
 }

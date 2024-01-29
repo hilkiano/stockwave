@@ -8,24 +8,13 @@ import { ModalsProvider } from "@mantine/modals";
 
 import { workSans } from "@/styles/fonts";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 import QueryProvider from "@/lib/queryProvider";
 import { Notifications } from "@mantine/notifications";
+import { headers } from "next/headers";
+import SidebarProvider from "@/lib/sidebarProvider";
+import UserProvider from "@/lib/userProvider";
 
 const locales = ["en", "id"];
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
-  const t = await getTranslations({ locale, namespace: "Meta.Dashboard" });
-
-  return {
-    title: t("title", { app_name: process.env.APP_NAME }),
-    description: t("desc"),
-  };
-}
 
 export default function RootLayout({
   children,
@@ -35,6 +24,8 @@ export default function RootLayout({
   params: { locale: string };
 }) {
   if (!locales.includes(locale as any)) notFound();
+
+  const { userData, userUiConfigs } = getInitialValue();
 
   return (
     <html lang={locale}>
@@ -51,13 +42,38 @@ export default function RootLayout({
         />
       </head>
       <body className={`${workSans.variable} font-sans antialiased`}>
-        <QueryProvider>
-          <MantineProvider theme={theme}>
-            <Notifications />
-            <ModalsProvider>{children}</ModalsProvider>
-          </MantineProvider>
-        </QueryProvider>
+        <UserProvider value={userData}>
+          <SidebarProvider
+            value={userUiConfigs ? userUiConfigs.sidebar_collapsed : false}
+          >
+            <QueryProvider>
+              <MantineProvider theme={theme}>
+                <Notifications />
+                <ModalsProvider>{children}</ModalsProvider>
+              </MantineProvider>
+            </QueryProvider>
+          </SidebarProvider>
+        </UserProvider>
       </body>
     </html>
   );
+}
+
+function getInitialValue() {
+  const headersList = headers();
+  let userData: UserProviderDataType | null = null;
+  let userUiConfigs: UserConfigModelType["ui"] | null = null;
+
+  if (headersList.has("x-userdata")) {
+    const parsedUserData: UserProviderDataType = JSON.parse(
+      headersList.get("x-userdata")!
+    );
+    userData = parsedUserData;
+
+    if (parsedUserData.configs) {
+      userUiConfigs = parsedUserData.configs.ui;
+    }
+  }
+
+  return { userData, userUiConfigs };
 }

@@ -27,4 +27,22 @@ export const menus: MenuType[] = [
     isUrl: true,
     url: "/account",
   },
+  {
+    name: "transactions",
+    icon: "cash",
+    isUrl: true,
+    url: "/transactions",
+  },
+  {
+    name: "products",
+    icon: "box-seam",
+    isUrl: true,
+    url: "/products",
+  },
+  {
+    name: "reports",
+    icon: "report",
+    isUrl: true,
+    url: "/reports",
+  },
 ];

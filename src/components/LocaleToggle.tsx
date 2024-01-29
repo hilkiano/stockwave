@@ -1,19 +1,23 @@
 "use client";
 
 import { useTransition } from "react";
-import { Select } from "@mantine/core";
+import { Radio, Select, Stack } from "@mantine/core";
 import { usePathname, useRouter } from "@/lib/navigation";
+import { useTranslations } from "next-intl";
 
 export default function LocaleToggle({
   locale,
   languageOptions,
+  variant = "default",
 }: {
   locale: string;
   languageOptions: { label: string; value: string }[];
+  variant?: "default" | "dropdown";
 }) {
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslations("Language");
 
   function onSelectChange(value: string) {
     startTransition(() => {
@@ -21,11 +25,11 @@ export default function LocaleToggle({
     });
   }
 
-  return (
+  return variant === "default" ? (
     <>
       <Select
         aria-label="Select application locale"
-        className="max-w-[180px] w-[80px]"
+        className={`max-w-[180px] w-[80px]`}
         classNames={{
           input:
             "rounded-lg font-semibold text-stockwave dark:text-stockwave-dark",
@@ -46,6 +50,23 @@ export default function LocaleToggle({
           <i className="ti ti-language text-lg text-stockwave dark:text-stockwave-dark"></i>
         }
       />
+    </>
+  ) : (
+    <>
+      <Stack className="my-2">
+        {languageOptions.map((opt, idx) => (
+          <Radio
+            size="xs"
+            key={idx}
+            checked={opt.value === locale}
+            onChange={() => onSelectChange(opt.value)}
+            label={t(`${opt.value}_dropdown`)}
+            classNames={{
+              label: "cursor-pointer",
+            }}
+          />
+        ))}
+      </Stack>
     </>
   );
 }

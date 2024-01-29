@@ -84,6 +84,13 @@
         "plan": "Paket yang Dipilih",
         "tnc_checkbox": "Dengan membuat akun, saya setuju dengan syarat dan ketentuan."
       }
+    },
+    "Products": {
+      "total": "Total produk terdaftar",
+      "total_active": "Total produk aktif",
+      "add_product_btn": "Tambah Produk",
+      "search_placeholder": "Cari...",
+      "no_data": "Kami mencari produk Anda dan tidak menemukan apa pun."
     }
   }
 }

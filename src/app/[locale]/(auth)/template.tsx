@@ -14,7 +14,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
             "Button",
             "Menu",
             "Language",
+            "Theme",
             "ErrorHandler",
+            "Logout",
           ])}
         >
           <AppBar withSidebar={false} />

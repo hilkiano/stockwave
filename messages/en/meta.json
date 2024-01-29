@@ -11,6 +11,22 @@
         "Register": {
             "title": "{app_name} | Registration",
             "desc": ""
+        },
+        "Account": {
+            "title": "{app_name} | Account",
+            "desc": ""
+        },
+        "Products": {
+            "title": "{app_name} | Products",
+            "desc": ""
+        },
+        "Transactions": {
+            "title": "{app_name} | Transactions",
+            "desc": ""
+        },
+        "Reports": {
+            "title": "{app_name} | Reports",
+            "desc": ""
         }
     }
 }

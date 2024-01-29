@@ -20,3 +20,10 @@ type ListResultType<ModelType> = {
   page_count: number;
   page: number;
 };
+
+type UserProviderDataType = UserModelType & {
+  store: StoreModelType & {
+    branches: StoreBranchModelType[];
+    license: LicenseModelType;
+  };
+};

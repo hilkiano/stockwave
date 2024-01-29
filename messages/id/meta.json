@@ -11,6 +11,22 @@
         "Register": {
             "title": "{app_name} | Registrasi",
             "desc": ""
+        },
+        "Account": {
+            "title": "{app_name} | Akun",
+            "desc": ""
+        },
+        "Products": {
+            "title": "{app_name} | Produk",
+            "desc": ""
+        },
+        "Transactions": {
+            "title": "{app_name} | Transaksi",
+            "desc": ""
+        },
+        "Reports": {
+            "title": "{app_name} | Laporan",
+            "desc": ""
         }
     }
 }

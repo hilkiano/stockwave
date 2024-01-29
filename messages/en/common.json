@@ -1,16 +1,40 @@
 {
   "Button": {
-    "collapse": "Collapse"
+    "collapse": "Collapse",
+    "logout_confirm": "Yes, I am",
+    "logout_cancel": "No wait a sec"
   },
   "Menu": {
     "home": "Home",
-    "account": "Account"
+    "account": "Account",
+    "branches_divider": "Store Branches",
+    "transactions": "Transactions",
+    "products": "Products",
+    "reports": "Reports"
   },
   "Language": {
     "en": "EN",
-    "id": "ID"
+    "id": "ID",
+    "dropdown_group": "Choose language",
+    "en_dropdown": "English",
+    "id_dropdown": "Indonesian"
+  },
+  "Theme": {
+    "light": "Light theme",
+    "dark": "Dark theme"
   },
   "ErrorHandler": {
     "modal_title": "Sorry. There was an error on our side."
+  },
+  "Logout": {
+    "logout_btn": "Logout",
+    "logout_header": "Logout Confirmation",
+    "logout_modal_body": "Are you sure you want to end the session? Some data may not have been saved."
+  },
+  "Filter": {
+    "header": "Additional filter"
+  },
+  "Statistic": {
+    "total": "Total {model}"
   }
 }

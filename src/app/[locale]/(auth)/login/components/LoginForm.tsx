@@ -10,6 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { showError } from "@/services/errorHandler";
 import { loginUser } from "@/services/authService";
 import { useRouter } from "@/lib/navigation";
+import { useUserContext } from "@/lib/userProvider";
 
 function LoginForm() {
   const router = useRouter();
@@ -20,6 +21,8 @@ function LoginForm() {
     username: z.string().min(1, { message: t("val_min_username") }),
     password: z.string().min(1, { message: t("val_min_password") }),
   });
+
+  const { setUserData } = useUserContext();
 
   const mutation = useMutation({
     mutationFn: (data: z.infer<typeof schema>) => {
@@ -33,6 +36,7 @@ function LoginForm() {
       showError(tError("modal_title"), error);
     },
     onSuccess: (data) => {
+      setUserData(data.result);
       router.push("/");
     },
   });

@@ -5,18 +5,14 @@ import { cookies } from "next/headers";
 const locales = ["en", "id"];
 const publicPages = ["/login", "/register"];
 
-const intlMiddleware = (
-  request: NextRequest,
-  token?: string,
-  token_expired_at?: string
-) => {
+const intlMiddleware = (request: NextRequest, result?: any) => {
   const url = new URL(request.url);
   const origin = url.origin;
   const pathname = url.pathname;
 
   const handleI18nRouting = createMiddleware({
     locales: ["en", "id"],
-    localePrefix: "as-needed",
+    localePrefix: "always",
     defaultLocale: "id",
     alternateLinks: false,
   });
@@ -26,12 +22,15 @@ const intlMiddleware = (
   response.headers.set("x-origin", origin);
   response.headers.set("x-pathname", pathname);
 
-  if (token && token_expired_at) {
-    response.cookies.set("jwt", token, {
-      httpOnly: true,
-      sameSite: "lax",
-      expires: new Date(token_expired_at),
-    });
+  if (result) {
+    if (result.refreshed_token && result.token_expired_at) {
+      response.cookies.set("jwt", result.refreshed_token, {
+        httpOnly: true,
+        sameSite: "lax",
+        expires: new Date(result.token_expired_at),
+      });
+    }
+    response.headers.set("x-userdata", JSON.stringify(result.user));
   }
 
   return response;
@@ -53,15 +52,22 @@ const authMiddleware = async (request: NextRequest) => {
     .then((res) => res.json())
     .then((res) => {
       if (!res.status) {
-        const url = new URL(`/login`, request.url);
-        return NextResponse.redirect(url);
+        if (res.code === 401) {
+          const url = new URL(`/login`, request.url);
+          return NextResponse.redirect(url);
+        } else {
+          throw new Error(res.message, { cause: res });
+        }
       } else {
-        return intlMiddleware(
-          request,
-          res.result.active_token,
-          res.result.token_expired_at
-        );
+        return intlMiddleware(request, res.result);
       }
+    })
+    .catch((err: Error) => {
+      console.error(err);
+      return NextResponse.json({
+        error: "Backend error. Please check system log.",
+        cause: err,
+      });
     });
 };
 

@@ -9,19 +9,14 @@ import PlanCard from "./PlanCard";
 import { useMutation } from "@tanstack/react-query";
 import { registerUser } from "@/services/registerService";
 import { showError } from "@/services/errorHandler";
+import { useRouter } from "@/lib/navigation";
 
 function ReviewCard() {
+  const router = useRouter();
   const step = useRegisterStore((state) => state.step);
   const tError = useTranslations("ErrorHandler");
   const t = useTranslations("Page.Register.Step_3");
   const [checked, setChecked] = useState(false);
-
-  const mutation = useMutation({
-    mutationFn: (payload: RegDataType) => registerUser(payload),
-    onError: (error) => {
-      showError(tError("modal_title"), error);
-    },
-  });
 
   type RegDataType = {
     choosed_plan: PlansModelType;
@@ -40,6 +35,17 @@ function ReviewCard() {
   const [regData, setRegData] = useLocalStorage<RegDataType | null>({
     key: "registration-data",
     defaultValue: null,
+  });
+
+  const mutation = useMutation({
+    mutationFn: (payload: RegDataType) => registerUser(payload),
+    onError: (error) => {
+      showError(tError("modal_title"), error);
+    },
+    onSuccess: () => {
+      setRegData(null);
+      router.push("/");
+    },
   });
 
   return (

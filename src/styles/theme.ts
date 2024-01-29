@@ -15,6 +15,7 @@ import {
   Textarea,
   Notification,
   createTheme,
+  Combobox,
 } from "@mantine/core";
 import { generateColors } from "@mantine/colors-generator";
 import buttonClasses from "@/styles/modules/Button.module.css";
@@ -29,6 +30,7 @@ import modalClasses from "@/styles/modules/Modal.module.css";
 import codeClasses from "@/styles/modules/Code.module.css";
 import checkboxClasses from "@/styles/modules/Checkbox.module.css";
 import notificationClasses from "@/styles/modules/Notification.module.css";
+import comboboxClasses from "@/styles/modules/Combobox.module.css";
 
 export const theme = createTheme({
   primaryColor: "stockwave",
@@ -40,6 +42,7 @@ export const theme = createTheme({
     Divider: Divider.extend({
       classNames: {
         root: dividerClasses.root,
+        label: dividerClasses.label,
       },
     }),
     Button: Button.extend({
@@ -136,6 +139,22 @@ export const theme = createTheme({
       },
       defaultProps: {
         withBorder: true,
+        radius: "md",
+      },
+    }),
+    Combobox: Combobox.extend({
+      classNames: {
+        dropdown: comboboxClasses.dropdown,
+        option: comboboxClasses.option,
+        footer: comboboxClasses.footer,
+        groupLabel: comboboxClasses.groupLabel,
+      },
+      styles: {
+        dropdown: {
+          backdropFilter: "blur(30px)",
+        },
+      },
+      defaultProps: {
         radius: "md",
       },
     }),

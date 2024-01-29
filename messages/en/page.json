@@ -84,6 +84,13 @@
         "plan": "Choosed Plan",
         "tnc_checkbox": "By creating my account, I agree with terms and conditions."
       }
+    },
+    "Products": {
+      "total": "Total registered products",
+      "total_active": "Total active products",
+      "add_product_btn": "Add Product",
+      "search_placeholder": "Search...",
+      "no_data": "We searched for your product and found nothing."
     }
   }
 }
