@@ -10,6 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { registerUser } from "@/services/registerService";
 import { showError } from "@/services/errorHandler";
 import { useRouter } from "@/lib/navigation";
+import { useUserContext } from "@/lib/userProvider";
 
 function ReviewCard() {
   const router = useRouter();
@@ -37,13 +38,16 @@ function ReviewCard() {
     defaultValue: null,
   });
 
+  const { setUserData } = useUserContext();
+
   const mutation = useMutation({
     mutationFn: (payload: RegDataType) => registerUser(payload),
     onError: (error) => {
       showError(tError("modal_title"), error);
     },
-    onSuccess: () => {
+    onSuccess: (data: JsonSuccessResponseType<UserProviderDataType>) => {
       setRegData(null);
+      setUserData(data.result);
       router.push("/");
     },
   });

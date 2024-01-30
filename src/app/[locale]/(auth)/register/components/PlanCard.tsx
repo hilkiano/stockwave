@@ -129,6 +129,7 @@ function PlanCard({
           ? "border-stockwave dark:!border-stockwave-dark"
           : ""
       }`}
+      radius="lg"
     >
       {plan.configs.is_best_value && selectFn && (
         <div className="absolute top-2 right-2 bg-stockwave dark:bg-stockwave-dark rounded-lg">
